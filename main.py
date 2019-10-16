@@ -74,7 +74,7 @@ def get_userdata():
 
         return redirect(url_for('display_info', name=user_data['user_id']))
 
-    return render_template('userdata.html', message=message)
+    return render_template('userinfo.html', message=message)
 
 @app.route('/userinfo', methods=['get'])
 def display_info():
@@ -102,6 +102,8 @@ def display_info():
     bmr = 655 + (4.35 * w) + (4.7 * h) - (4.7 * a)
     bmi_category = ''
 
+
+# Calculating BMI category
     if bmi < 18.5 :
         bmi_category = 'underweight'
     elif bmi >= 18.5 and bmi <= 24.9:
@@ -115,9 +117,8 @@ def display_info():
     else:
         bmi_category = 'Obese [class 3]'
 
-    return render_template('weight_info.html', bmi=bmi, bmr=bmr, bmi_cat=bmi_category)
 
-
+    return render_template('analysis.html', bmi=int(bmi), bmr=bmr, bmi_cat=bmi_category, weight=w)
 
 
 

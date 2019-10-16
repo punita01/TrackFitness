@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="/static/contact_form/vendor/bootstrap/css/bootstrap.min.css">
+    <style>
+        .card-img-top {
+   width: 100%;
+   height: 20vw;
+   object-fit: cover;
+}
+    </style>
+</head>
+<body>
+<div class="card-deck mt-5 ml-3 mr-3">
+  <div class="card">
+    <img class="card-img-top" src="/static/analysis/weight.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Your Current Weight</h5>
+        <p style="font-size:20px;" class="card-text"><b>{{weight}} lbs</b></p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="/static/analysis/bmi.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Body Mass Index(BMI)</h5>
+        <h7>BMI is a person's weight in kilograms (kg) divided by his or her height in meters squared.
+            The National Institutes of Health (NIH) now defines normal weight, overweight, and obesity according to
+            BMI rather than the traditional height/weight charts.</h7>
+        <p style="font-size:20px;" class="card-text">Your BMI is :<b>{{bmi}}</b></p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="/static/analysis/bmr.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Basal Metabolic Rate(BMR)</h5>
+         <h7>It is the total number of calories that your body needs to perform basic, life-sustaining functions</h7>
+        <p style="font-size:20px;" class="card-text">Your BMR is :<b>{{bmr}}</b></p>
+    </div>
+  </div>
+
+   <div class="card">
+    <img class="card-img-top" src="/static/analysis/cal.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Calories you need to burn to lose weight?</h5>
+        <h7>When you create a calorie deficit, your body gets energy or fuel from stored fat.
+            When your body burns fat for energy, you lose weight.</h7>
+        <p style="font-size:20px;" class="card-text">Reduce calories from diet: <b>200-300</b></p>
+         <p style="font-size:20px;" class="card-text">Burn calories with exercise: <b>600-700</b></p>
+    </div>
+  </div>
+
+</div>
+</body>
