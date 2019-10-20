@@ -20,7 +20,8 @@ def add_user(user_data):
         'password': user_data['password'],
         'weight': user_data['weight'],
         'height': user_data['height'],
-        'age': user_data['age']
+        'age': user_data['age'],
+        'target': user_data['target']
     })
 
     datastore_client.put(user)
@@ -61,6 +62,7 @@ def get_userdata():
         user_data['weight'] = request.form.get('weight')
         user_data['height'] = request.form.get('height')
         user_data['age'] = request.form.get('age')
+        user_data['target'] = request.form.get('target')
 
         result = add_user(user_data)
         # if result == "user_exists":
@@ -76,22 +78,22 @@ def get_userdata():
 
     return render_template('userinfo.html', message=message)
 
-@app.route('/userinfo', methods=['get'])
+@app.route('/userinfo', methods=['get', 'post'])
 def display_info():
 
     user_key = datastore_client.key('username', str(request.args.get('name')))
     user = datastore_client.get(user_key)
     print("USER data is : {}", user)
 
+    diet = None
+    exercise = None
+    target = None
+
 
     weight = user['weight']
     height = user['height']
     age = user['age']
-
-    # weight = request.args.get('weight')
-    # height = request.args.get('height')
-    # name = request.args.get('name')
-    # age = request.args.get('age')
+    target = user['target']
 
     w = float(weight)
     h = float(height)
@@ -117,8 +119,31 @@ def display_info():
     else:
         bmi_category = 'Obese [class 3]'
 
+    print("Target is : {}".format(target))
 
-    return render_template('analysis.html', bmi=int(bmi), bmr=bmr, bmi_cat=bmi_category, weight=w)
+    if target == "1":
+        diet = 200
+        exercise = 300
+    else:
+        diet = 350
+        exercise = 650
+
+    if request.method == 'POST':
+        intake = int(request.form.get('cal_intake'))
+        burnt = int(request.form.get('cal_burnt'))
+
+        total_expected_cal = (bmr - diet) - exercise
+        total_user_cal = intake - burnt
+
+        if total_expected_cal >= total_user_cal:
+            result = "yes"
+        else:
+            result = "no"
+
+        return render_template('result.html', result=result)
+
+
+    return render_template('analysis.html', bmi=int(bmi), bmr=int(bmr), bmi_cat=bmi_category, weight=w, diet=(bmr-diet), exercise=exercise)
 
 
 

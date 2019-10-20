@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weightloss Results</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<style>
+  body {
+  background: url('static/contact_form/images/bg3.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+</style>
+</head>
+<body>
+<br>
+<br>
+<br>
+<div class="container bg-light mt-5 mb-2 col-md-4">
+{%if result == 'yes'%}
+   <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Weight loss Result</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Today's Progress</h6>
+    <p class="card-text">Congratulation!! You lost weight today.</p>
+  </div>
+</div>
+</div>
+    {% else %}
+    <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Weight loss Result</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Today's Progress</h6>
+    <p class="card-text">Oops!! No pain. No gain. SHUT UP AND TRAIN.</p>
+  </div>
+</div>
+    {%endif%}
+</div>
+</body>
+</html>

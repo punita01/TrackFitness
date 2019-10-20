@@ -1,98 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Contact V2</title>
+	<title>User Information form</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="/static/contact_form/images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/contact_form/vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/contact_form/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/contact_form/vendor/animate/animate.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/contact_form/vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/contact_form/vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/contact_form/css/util.css">
-	<link rel="stylesheet" type="text/css" href="/static/contact_form/css/main.css">
-<!--===============================================================================================-->
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<style>
+  body {
+  background: url('static/contact_form/images/bg1.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+</style>
+
 </head>
 <body>
-
-	<div class="bg-contact2" style="background-image: url('images/bg-01.jpg');">
-		<div class="container-contact2">
-			<div class="wrap-contact2">
-				<form class="contact2-form" action="" method="post">
-					<span class="contact2-form-title">
-						User Details
-					</span>
-
-					<div class="wrap-input2 validate-input" data-validate="Name is required">
-						<input class="input2" type="email" name="username">
-						<span class="focus-input2" data-placeholder="user email"></span>
-					</div>
-
-					<div class="wrap-input2">
-						<input class="input2" type="password" name="password">
-						<span class="focus-input2" data-placeholder="password"></span>
-					</div>
-
-					<div class="wrap-input2">
-						<input class="input2" type="number" name="weight">
-						<span class="focus-input2" data-placeholder="weight"></span>
-					</div>
-
-					<div class="wrap-input2">
-						<input class="input2" type="number" name="height">
-						<span class="focus-input2" data-placeholder="height"></span>
-					</div>
-
-					<div class="wrap-input2">
-						<input class="input2" type="number" name="age">
-						<span class="focus-input2" data-placeholder="age"></span>
-					</div>
-
-
-
-					<div class="container-contact2-form-btn">
-						<div class="wrap-contact2-form-btn">
-							<div class="contact2-form-bgbtn"></div>
-							<button class="contact2-form-btn">
+    <div class="container bg-light mt-5 mb-2 col-md-5 rounded">
+	<form action="" method="post">
+ <div class="form-group ">
+	 <label for="username"><h3 class="font-weight-bold">User Id:</h3></label>
+  <input type="email" class="form-control form-control-lg border border-dark" name="username" id="username"
+         placeholder="User email" required>
+	 <br>
+	 <label class="display-4" for="password"><h3 class="font-weight-bold">Password:</h3></label>
+  <input type="password" class="form-control form-control-lg border border-dark rounded" name="password" id="password"
+   placeholder="Password" required>
+	 <br>
+	 <label class="display-4" for="weight"><h3 class="font-weight-bold">Weight:</h3></label>
+  <input type="number" class="form-control form-control-lg border border-dark rounded" name="weight" id="weight" placeholder="Wight in Pounds">
+	 <br>
+	 <label class="display-4" for="height"><h3 class="font-weight-bold">Height:</h3></label>
+  <input type="number" class="form-control form-control-lg border border-dark rounded"  name="height" id="height" placeholder="Height in Inches">
+	 <br>
+	 <label class="display-4" for="age"><h3 class="font-weight-bold">Age:</h3></label>
+  <input type="number" class="form-control form-control-lg border border-dark rounded"  name="age" id="age">
+	 <br>
+ </div>
+     <div class="form-group ">
+	 <label ><h3 class="font-weight-bold">Target weight loss per week:</h3></label>
+     </div>
+	<div class="form-check">
+  <label class="form-check-label">
+    <input  type="radio" class="form-check-input" name="target" value="1">1 lbs
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label">
+    <input type="radio" class="form-check-input" name="target" value="2">2 lbs
+  </label>
+</div>
+         <br>
+	<div class="text-center pb-2">
+	<button class="btn btn-primary btn-lg">
 								Submit
 							</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
 	</div>
 
+	</form>
 
-
-
-<!--===============================================================================================-->
-	<script src="/static/contact_form/vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="/static/contact_form/vendor/bootstrap/js/popper.js"></script>
-	<script src="/static/contact_form/vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="/static/contact_form/vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="/static/contact_form/js/main.js"></script>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-23581568-13');
-	</script>
+</div>
 
 </body>
 </html>

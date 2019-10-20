@@ -1,53 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<style>
+  body {
+  background: url('static/contact_form/images/bg2.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
 <link rel="stylesheet" type="text/css" href="/static/contact_form/vendor/bootstrap/css/bootstrap.min.css">
     <style>
         .card-img-top {
-   width: 100%;
-   height: 20vw;
+   width: 50%;
+   height: 10vw;
    object-fit: cover;
 }
     </style>
 </head>
 <body>
-<div class="card-deck mt-5 ml-3 mr-3">
+<div class="container">
+<div class="card-deck mt-5 ml-1 mr-1">
   <div class="card">
-    <img class="card-img-top" src="/static/analysis/weight.jpg" alt="Card image cap">
+    <!--<img class="card-img-top" src="/static/analysis/weight.jpg" alt="Card image cap">-->
     <div class="card-body">
-      <h5 class="card-title">Your Current Weight</h5>
-        <p style="font-size:20px;" class="card-text"><b>{{weight}} lbs</b></p>
+        <h5 class="card-title font-weight-bold"><u>Weight</u></h5>
+        <h6 class="card-subtitle mb-2 text-muted">Current weight</h6>
+        <p style="font-size:18px;" class="card-text"><b>{{weight}} lbs</b></p>
     </div>
   </div>
   <div class="card">
-    <img class="card-img-top" src="/static/analysis/bmi.jpg" alt="Card image cap">
+    <!--<img class="card-img-top" src="/static/analysis/bmi.jpg" alt="Card image cap">-->
     <div class="card-body">
-      <h5 class="card-title">Body Mass Index(BMI)</h5>
-        <h7>BMI is a person's weight in kilograms (kg) divided by his or her height in meters squared.
-            The National Institutes of Health (NIH) now defines normal weight, overweight, and obesity according to
-            BMI rather than the traditional height/weight charts.</h7>
-        <p style="font-size:20px;" class="card-text">Your BMI is :<b>{{bmi}}</b></p>
+        <h5 class="card-title font-weight-bold"><u>BMI</u></h5>
+        <h6 class="card-subtitle mb-2 text-muted">Body Mass Index</h6>
+        <p style="font-size:18px;" class="card-text"><b>{{bmi}}</b></p>
+        <p class="card-text"><b>BMI category: {{bmi_cat}}</b></p>
     </div>
   </div>
   <div class="card">
-    <img class="card-img-top" src="/static/analysis/bmr.jpg" alt="Card image cap">
+    <!--<img class="card-img-top" src="/static/analysis/bmr.jpg" alt="Card image cap">-->
     <div class="card-body">
-      <h5 class="card-title">Basal Metabolic Rate(BMR)</h5>
-         <h7>It is the total number of calories that your body needs to perform basic, life-sustaining functions</h7>
-        <p style="font-size:20px;" class="card-text">Your BMR is :<b>{{bmr}}</b></p>
+        <h5 class="card-title font-weight-bold"><u>BMR</u></h5>
+        <h6 class="card-subtitle mb-2 text-muted">Basal Metabolic Rate: Minimum calories our body needs.</h6>
+        <p style="font-size:18px;" class="card-text"><b>{{bmr}}</b></p>
     </div>
   </div>
 
    <div class="card">
-    <img class="card-img-top" src="/static/analysis/cal.jpg" alt="Card image cap">
+    <!--<img class="card-img-top" src="/static/analysis/cal.jpg" alt="Card image cap">-->
     <div class="card-body">
-      <h5 class="card-title">Calories you need to burn to lose weight?</h5>
-        <h7>When you create a calorie deficit, your body gets energy or fuel from stored fat.
-            When your body burns fat for energy, you lose weight.</h7>
-        <p style="font-size:20px;" class="card-text">Reduce calories from diet: <b>200-300</b></p>
-         <p style="font-size:20px;" class="card-text">Burn calories with exercise: <b>600-700</b></p>
+        <h5 class="card-title font-weight-bold"><u>Calories</u></h5>
+        <h6 class="card-subtitle mb-2 text-muted">Balance your calories.</h6>
+        <p style="font-size:18px;" class="card-text">Intake per day: <b>{{diet}}</b></p>
+         <p style="font-size:18px;" class="card-text">Burn with workout: <b>{{exercise}}</b></p>
     </div>
+
+       <br>
+       <br>
   </div>
 
+</div>
+</div>
+
+     <div class="container bg-light mt-5 mb-2 col-md-4">
+	<form action="" method="post">
+ <div class="form-group ">
+	 <label for="calintake"><h3 class="font-weight-bold">Calorie Intake:</h3></label>
+  <input type="number" class="form-control form-control-lg border border-dark" name="cal_intake" id="calintake"
+         placeholder="calories" required>
+	 <br>
+	 <label class="display-4" for="calburnt"><h3 class="font-weight-bold">Calories Burnt:</h3></label>
+  <input type="number" class="form-control form-control-lg border border-dark" name="cal_burnt" id="calburnt"
+   placeholder="calories" required>
+      <br>
+	<div class="text-center pb-2">
+	<button class="btn btn-primary btn-lg">
+								log calories
+							</button>
+	</div>
+ </div>
+    </form>
 </div>
 </body>
